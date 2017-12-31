@@ -14,22 +14,25 @@ export default class Homepage extends Component {
   render() {
     return <div>
       <Helmet
-        title='Home page'
+        title='Youturn - Combatting Fake News'
         meta={[
           {
             property: 'og:title',
-            content: 'Golang Isomorphic React/Hot Reloadable/Redux/Css-Modules Starter Kit'
+            content: 'Youturn - Combatting Fake News'
           }
         ]} />
-      <h1 className={example}>
+      
+        <image src="static/images/youturn.jpg" />
+     
+      {/* <h1 className={example}>
         Hot Reloadable <br />
         Golang + React + Redux + Css-Modules
         <br />Isomorphic Starter Kit</h1>
       <br />
       <p className={p}>
         Please take a look at <Link className={link} to='/docs'>usage</Link> page.
-      </p>
-    </div>;
+      </p> */}
+    </div>
   }
 
 }
