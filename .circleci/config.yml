@@ -24,7 +24,7 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: curl https://glide.sh/get | sh      
       - run: sudo apt-get install apt-transport-https
-      - run: sudo apt-get install nodejs
+      - run: curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
       - run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
       - run: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
       - run: sudo apt-get update && sudo apt-get install yarn
