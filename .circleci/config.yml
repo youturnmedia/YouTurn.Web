@@ -23,6 +23,6 @@ jobs:
 
       # specify any bash command here prefixed with `run: `
       - run: curl https://glide.sh/get | sh
-      - run: sudo yum install yarn
+      - run: sudo apt-get update && sudo apt-get install yarn
       - run: make install
       - run: make build
