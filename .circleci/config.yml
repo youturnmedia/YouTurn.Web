@@ -30,6 +30,11 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install yarn
       - run: make install
       - run: make build
+      - run: apt-get install software-properties-common
+      - run: sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+      - run: curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+      - run: sudo apt-get update
+      - run: sudo apt-get install heroku
       - run:
           name: Run setup script
           command: bash .circleci/setup-heroku.sh
@@ -46,5 +51,6 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               git push --force git@heroku.com:youturn-web.git master
-              make serv
+              heroku run make build
+              heroku run make serv
             fi
