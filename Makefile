@@ -16,6 +16,8 @@ GIT_HASH      = $(shell git rev-parse HEAD)
 LDFLAGS       = -w -X main.commitHash=$(GIT_HASH)
 GLIDE         := $(shell command -v glide 2> /dev/null)
 
+get: clean
+
 build: $(ON) $(GO_BINDATA) clean $(TARGET)
 
 clean:
