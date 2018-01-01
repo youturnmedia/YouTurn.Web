@@ -51,6 +51,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               git push --force git@heroku.com:youturn-web.git master
+              heroku run make install
               heroku run make build
               heroku run make serv
             fi
