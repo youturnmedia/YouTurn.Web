@@ -40,7 +40,7 @@ jobs:
       - run:  
           name: Fix host authenticity for heroku.com
           command: |
-            ssh-keyscan heroku.com >> ~/.ssh/known_hosts
+            ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts
       - run:
           name: Deploy Master to Heroku
           command: |
