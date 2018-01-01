@@ -1,35 +1,16 @@
-# Golang CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-go/ for more details
-version: 2
-jobs:
-  build:
-    docker:
-      # specify the version
-      - image: circleci/golang:1.8
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    #### TEMPLATE_NOTE: go expects specific checkout path representing url
-    #### expecting it in the form of
-    ####   /go/src/github.com/circleci/go-tool
-    ####   /go/src/bitbucket.org/circleci/go-tool
-    working_directory: /go/src/github.com/youturnmedia/YouTurn.Web
-    steps:
-      - checkout
-
-      # specify any bash command here prefixed with `run: `
-      - run: curl https://glide.sh/get | sh      
-      - run: sudo apt-get install apt-transport-https
-      - run: curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-      - run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-      - run: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-      - run: sudo apt-get update && sudo apt-get install yarn
-      - run: make install
-      - run: make build
+dependencies:
+  override:
+	- mkdir -p ~/.go_project/src/github.com/youturnmedia
+	- ln -s ${HOME}/YouTurn.Web ${HOME}/.go_project/src/github.com/youturnmedia/YouTurn.Web
+    # './...' is a relative pattern which means all subdirectories
+    - curl https://glide.sh/get | sh      
+    - sudo apt-get install apt-transport-https
+    - curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+    - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    - sudo apt-get update && sudo apt-get install yarn
+    - make install
+    - make build
 deployment:
   prod:
     branch: master
