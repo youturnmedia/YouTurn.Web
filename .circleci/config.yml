@@ -30,7 +30,7 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install yarn
       - run: make install
       - run: make build
-      - run: apt-get install software-properties-common
+      - run: sudo apt-get install software-properties-common
       - run: sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
       - run: curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
       - run: sudo apt-get update
