@@ -30,15 +30,15 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install yarn
       - run: make install
       - run: make build
-      - run: bash .circleci/setup-heroku.sh
-      - run: git remote add heroku git@heroku.com:youturn-web.git
+      - run:
+          name: Run setup script
+          command: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
           fingerprints:
             - "f7:e2:2a:2b:0b:d0:c6:fe:5b:22:f5:6f:39:b3:eb:77"
             - "8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad"
-      - deploy:
-          name: Deploy to Heroku
+      - run: git remote add heroku git@heroku.com:youturn-web.git
+      - run:
+          name: Deploy Master to Heroku
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push heroku master            
-            fi
+            git push --force git@heroku.com:youturn-web.git HEAD:refs/heads/master
