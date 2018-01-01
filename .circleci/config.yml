@@ -32,12 +32,12 @@ jobs:
       - run: make build
       - run: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
-        fingerprints:
-          - "f7:e2:2a:2b:0b:d0:c6:fe:5b:22:f5:6f:39:b3:eb:77"
+          fingerprints:
+            - "f7:e2:2a:2b:0b:d0:c6:fe:5b:22:f5:6f:39:b3:eb:77"
       - deploy:
-        name: Deploy to Heroku
-        command: |
-           if [ "${CIRCLE_BRANCH}" == "master" ]; then
+          name: Deploy to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               git push heroku master
               heroku open mark
             fi
