@@ -31,6 +31,7 @@ jobs:
       - run: make install
       - run: make build
       - run: bash .circleci/setup-heroku.sh
+      - run: git remote add heroku git@heroku.com:youturn-web.git
       - add_ssh_keys:
           fingerprints:
             - "f7:e2:2a:2b:0b:d0:c6:fe:5b:22:f5:6f:39:b3:eb:77"
