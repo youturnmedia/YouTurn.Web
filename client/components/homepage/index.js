@@ -21,8 +21,8 @@ export default class Homepage extends Component {
             content: 'Youturn - Combatting Fake News'
           }
         ]} />
-      
-        <image src="static/images/youturn.jpg" />
+      Hello From Continous Delivery
+        <image src="static/images/youturn.jpg" /> 
      
       {/* <h1 className={example}>
         Hot Reloadable <br />
