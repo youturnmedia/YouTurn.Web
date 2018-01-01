@@ -36,7 +36,8 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "f7:e2:2a:2b:0b:d0:c6:fe:5b:22:f5:6f:39:b3:eb:77"
-            - "8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad"      
+            - "8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad"
+      - run: echo '8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad' >> ~/.ssh/known_hosts                  
       - run:
           name: Deploy Master to Heroku
           command: |
