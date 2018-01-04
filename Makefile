@@ -35,14 +35,15 @@ $(BUNDLE): $(APP)
 	@$(NODE_BIN)/webpack --progress --colors --bail
 
 $(TARGET): $(BUNDLE) $(BINDATA)
-	@go build -ldflags '$(LDFLAGS)' -o $@ $(IMPORT_PATH)/server
+	@env CGO_ENABLED=0 GOOS=linux GOARCH=386
+	@go build -a -o youturnapp -installsuffix netgo -ldflags '-extldflags "-static"' $(IMPORT_PATH)/server
 
 kill:
 	@kill `cat $(PID)` || true
 
 serve: $(ON) $(GO_BINDATA) clean $(BUNDLE) restart
 	@BABEL_ENV=dev node hot.proxy &
-	@$(NODE_BIN)/webpack --watch &
+	@$(NODE_BIN)/webpack --watch 
 	@$(ON) -m 2 $(GO_FILES) $(TEMPLATES) | xargs -n1 -I{} make restart || make kill
 
 restart: BINDATA_FLAGS += -debug
