@@ -21,7 +21,7 @@ export default class Homepage extends Component {
             content: 'Youturn - Combatting Fake News'
           }
         ]} />
-      Hello From Continous Delivery Heroku
+        <h1>Youturn</h1><br/><br/>
         <image src="static/images/youturn.jpg" /> 
      
       {/* <h1 className={example}>
