@@ -4,6 +4,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol,li,button,input,strong,small,em {
   font-size: inherit;
   font-weight: inherit;
   font-style: inherit;
+  font-family: 'bariol_serifregular';  
 }
 
 b {
@@ -29,12 +30,9 @@ button, input, textarea {
   outline: none;
 }
 
-html {
-  font-family: Helvetica;
-}
-
 body {
   font-size: 16px;
+  font-family: 'bariol_serifregular';
 }
 
 
@@ -48,4 +46,17 @@ img {
 
 *, :before, :after {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'bariol_serifregular';
+  src: url('/fonts/bariol_serif_regular-webfont.eot');
+  src: url('/fonts/bariol_serif_regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/bariol_serif_regular-webfont.woff2') format('woff2'),
+       url('/fonts/bariol_serif_regular-webfont.woff') format('woff'),
+       url('/fonts/bariol_serif_regular-webfont.ttf') format('truetype'),
+       url('/fonts/bariol_serif_regular-webfont.svg#bariol_serifregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
 }

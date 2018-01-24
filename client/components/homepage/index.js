@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router';
-import { example, p, link } from './styles';
+import { example, p, link, header } from './styles';
 
 export default class Homepage extends Component {
   /*eslint-disable */
@@ -21,17 +21,17 @@ export default class Homepage extends Component {
             content: 'Youturn - Combatting Fake News'
           }
         ]} />
-        <h1>Youturn - Combatting Fake News Auto deploy</h1><br/><br/>
+        <h1 className={header}>Youturn - Combatting Fake News</h1><br/><br/>
         <image src="static/images/youturn.jpg" /> 
      
-      {/* <h1 className={example}>
+      <h1 className={example}>
         Hot Reloadable <br />
         Golang + React + Redux + Css-Modules
         <br />Isomorphic Starter Kit</h1>
       <br />
       <p className={p}>
         Please take a look at <Link className={link} to='/docs'>usage</Link> page.
-      </p> */}
+      </p>
     </div>
   }
 

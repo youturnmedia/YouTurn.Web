@@ -36,7 +36,7 @@ $(BUNDLE): $(APP)
 
 $(TARGET): $(BUNDLE) $(BINDATA)
 	@env CGO_ENABLED=0 GOOS=linux GOARCH=386
-	@go build -a -o youturnapp -installsuffix netgo -ldflags '-extldflags "-static"' $(IMPORT_PATH)/server
+	@go build -ldflags '$(LDFLAGS)' -o $@ $(IMPORT_PATH)/server
 
 kill:
 	@kill `cat $(PID)` || true

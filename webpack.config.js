@@ -18,7 +18,7 @@ var plugins = [
   new ExtractTextPlugin('bundle.css'),
 ];
 
-//if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   plugins = plugins.concat([
     new webpack.optimize.UglifyJsPlugin({
       output: {comments: false},
@@ -30,7 +30,7 @@ var plugins = [
   ]);
 
   postCssLoader.splice(1, 1); // drop human readable names
-//};
+};
 
 var config  = {
   entry: {
