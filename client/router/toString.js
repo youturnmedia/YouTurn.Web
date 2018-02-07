@@ -32,7 +32,7 @@ export default function (options, cbk) {
       try {
         if (error) {
           result.error = error;
-
+          console.log(error)
         } else if (redirectLocation) {
           result.redirect = redirectLocation.pathname + redirectLocation.search;
 
@@ -42,6 +42,7 @@ export default function (options, cbk) {
               <RouterContext {...renderProps} />
             </Provider>
           );
+          console.log(result.app);
           const { title, meta } = Helmet.rewind();
           result.title = title.toString();
           result.meta = meta.toString();

@@ -1,0 +1,9 @@
+
+:global(#youturnbrand){
+    font-size: 34px;
+    letter-spacing: 1px;
+    color:#0874B4;
+}
+:global(#menu){
+    margin-bottom: 40px;
+}

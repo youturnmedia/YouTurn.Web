@@ -80,4 +80,39 @@ rgba(0, 0, 0, 0)
   font-style: normal;
   
   }
+.minilistcol{
   
+}
+.otherarticles{
+  margin:-15px -15px;
+}
+
+ :global #videopreview div{
+  padding-left:0px;
+  padding-right:0px;
+} 
+:global #videopreview {
+  margin:15px 30px 15px 15px;  
+}
+:global #first{
+  height:358px;
+}
+:global #videostitle{
+  font-size: 34px;
+  letter-spacing: 1px;
+  color: #0874B4;
+}
+/* :global #videostitle:before {
+  content: 'Youturn Videos';
+  position: absolute;
+  display: block;
+  top: 10%;
+  left: -1000px;
+  right: -1000px;
+  height: 1px;
+  background-color: #dcdfe4;
+} */
+/* :global .embed-container { position: relative; padding-bottom: 56.25%; height: 400px; overflow: hidden; max-width: 100%; } 
+:global .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+:global .embed-container object { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+:global .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } */

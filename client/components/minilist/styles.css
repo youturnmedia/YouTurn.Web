@@ -1,0 +1,37 @@
+.minilistitemimage{
+    float:left;
+    height:187px;
+    width:250px;
+    margin-right:10px;
+}
+.minilistitemheader{
+    margin-top:0px;
+    font-size:16px;
+    font-weight: 800;
+}
+.minilistitemcontainer{
+    text-align: left;
+    border-radius: 6
+   
+}
+.minilistitemheadercontainer{
+    padding-top:15px;
+}
+.minilistimage :first-child{
+   border-top-left-radius: 6px;
+}
+.minilistrow{
+    border-radius: 6px;
+    margin: 15px 0px;
+    background-color: white;
+    padding-right: 15px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.05), 0 0 15px rgba(0,0,0,.05); 
+    box-shadow: 0 0 20px rgba(0,0,0,.05), 0 0 15px rgba(0,0,0,.05);
+}
+.minilistrow:hover {
+    -webkit-box-shadow: 0 0 35px rgba(0,0,0,.13), 0 0 30px rgba(0,0,0,.13);
+    box-shadow: 0 0 35px rgba(0,0,0,.13), 0 0 30px rgba(0,0,0,.13);
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}

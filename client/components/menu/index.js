@@ -1,48 +1,49 @@
 import React, {Component} from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem,Image } from 'react-bootstrap';
 import { IndexLink,Link } from 'react-router';
+import {navbardefault} from './styles';
 
 export default class Menu extends Component{
     render(){
-        const navbarInstance = (
-            <Navbar  collapseOnSelect>
+       
+		
+        return(
+            <div id="menu">
+                {/* <h1>You Turn</h1> */}
+				<Navbar fixedTop={true}  >
 		<Navbar.Header>
-			<Navbar.Brand>
-				<a href="#brand">React-Bootstrap</a>
+			<Navbar.Brand>				
+				
+				<Link id="youturnbrand" to='/' >	You Turn</Link>
 			</Navbar.Brand>
 			<Navbar.Toggle />
 		</Navbar.Header>
 		<Navbar.Collapse>
 			<Nav>
-				<NavItem eventKey={1} >
-                    <IndexLink to='/' >Home</IndexLink>
+				<NavItem href='/செய்திகள்'>
+					செய்திகள்
 				</NavItem>
-				<NavItem eventKey={2} href="/article/test">
-                    <Link to='/article/test' >article</Link>
+				<NavItem href='/மீம்ஸ்'>
+					மீம்ஸ்
 				</NavItem>
-				<NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-					<MenuItem eventKey={3.1}>Action</MenuItem>
-					<MenuItem eventKey={3.2}>Another action</MenuItem>
-					<MenuItem eventKey={3.3}>Something else here</MenuItem>
-					<MenuItem divider />
-					<MenuItem eventKey={3.3}>Separated link</MenuItem>
-				</NavDropdown>
+				<NavItem href='/கட்டுரைகள்'>
+					கட்டுரைகள்
+				</NavItem>
+				<NavItem href='/எங்களைபற்றி'>
+					எங்களை பற்றி
+				</NavItem>	
+				<NavItem href='/விமர்சனங்கள்'>
+					விமர்சனங்கள்
+				</NavItem>						
 			</Nav>
 			<Nav pullRight>
 				<NavItem eventKey={1} href="#">
-					Link Right
+					சந்தேகங்களை கேட்க?
 				</NavItem>
-				<NavItem eventKey={2} href="#">
-					Link Right
-				</NavItem>
+				
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>
-        );
-        return(
-            <div>
-                <h1>You Turn Logo</h1>
-                {navbarInstance}
             </div>
         )
     }
